@@ -1,10 +1,23 @@
 import waterlogo from '../assets/waterlogo.svg';
 import logo from '../assets/logo.svg';
 import pie from '../assets/pie.svg';
+import gitlab from "../assets/gitlab.svg";
+import key from "../assets/key.svg";
+
+
+import { loginLinks } from '../constants/links';
+
 
 import { FaArrowUp } from "react-icons/fa";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+
+    const [mode, setMode] = useState('saas');
+    const selected = 'bg-blue-600 text-white' ;
+    const navigate = useNavigate();
+
     return (
         <div className="flex w-full h-dvh">
             <div className='hidden items-center justify-center lg:flex w-1/2 relative'>
@@ -57,8 +70,64 @@ export default function Login() {
                     <div className='text-3xl'>500k+</div>
                 </div>
             </div>
-            <div className='w-full lg:w-1/2'>
-                Login Buttons
+            <div className='w-full flex flex-col items-center justify-center bg-[#FAFAFA] lg:w-1/2 p-4 gap-2'>
+                <div className='flex flex-col items-center w-full border border-[#E9EAEB] rounded-lg p-4 gap-3 bg-white'>
+                    <div className='flex items-center gap-2'>
+                        <img src={logo} alt='logo' className='w-6 h-6' />
+                        <div className='font-thin text-xl'>
+                            CodeAnt AI
+                        </div>
+                     </div>
+                     <h2>
+                        Welcome to CodeAnt AI
+                     </h2>
+                     <div className='flex w-full gap-2'>
+                        <div 
+                            onClick={() => setMode('saas')}
+                            className={"w-full cursor-pointer text-center py-2 rounded-lg border border-[#E9EAEB] "  + (mode === 'saas' ? selected : '')}>
+                            SAAS
+                        </div>
+                        <div
+                            onClick={() => setMode('self')}
+                            className={'w-full cursor-pointer text-center py-2 rounded-lg border border-[#E9EAEB] ' + (mode === 'self' ? selected : '')}>
+                            Self Hosted
+                        </div>
+                     </div>
+                     {mode === 'saas' ? (
+                        loginLinks.map( (one) => 
+                            <div 
+                                key={one.name}
+                                onClick={() => navigate(one.link)}
+                                className='flex cursor-pointer rounded-lg justify-center items-center border border-[#D8DAE5] w-full sm:w-[60%] gap-2 p-2'
+                            >
+                                <img src={one.logo} alt='link logo' className='w-6 h-6' />
+                                Sign in with {one.name}
+                            </div>
+                        )
+                     ) : (
+                        <div className='flex flex-col gap-2 w-full items-center'>
+                            <div
+                                onClick={() => navigate('/rerouting')}
+                                className='flex cursor-pointer rounded-lg justify-center border border-[#D8DAE5] w-full sm:w-[60%] gap-2 p-2' 
+                            >
+                                <img src={gitlab} alt='link logo' className='w-6 h-6' />
+                                Self Hosted GitLab
+                            </div>
+                            <div
+                                onClick={() => navigate('/rerouting')}
+                                className='flex cursor-pointer rounded-lg justify-center border border-[#D8DAE5] w-full sm:w-[60%] gap-2 p-2' 
+                            >
+                                <img src={key} alt='link logo' className='w-6 h-6' />
+                                Sign In with SSO
+                            </div>
+                            <div className='w-full sm:w-[60%] gap-2 p-6'></div>
+                            <div className='w-full sm:w-[60%] gap-2 p-6'></div>
+                        </div>
+                     )}
+                </div>
+                <div>
+                    By signing up you agree to the <span className='font-bold'>Privacy Policy</span>
+                </div>
             </div>
         </div>
     );
