@@ -5,3 +5,7 @@
 h2 {
     @apply font-bold text-xl
 }
+
+h3 {
+    @apply font-semibold text-lg
+}

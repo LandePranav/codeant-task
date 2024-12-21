@@ -16,7 +16,7 @@ export default function MobileNavbar() {
 
     return (
         <nav>
-            <div className="flex w-screen justify-between px-3 py-3">
+            <div className="flex w-screen justify-between px-3 py-3 sm:hidden border border-b-[#D5D7DA]">
                 <div className="flex w-full gap-2 font-thin text-lg items-center">
                     <img src={logo} alt="logo" className="w-6 h-6" />
                     CodeAnt AI
