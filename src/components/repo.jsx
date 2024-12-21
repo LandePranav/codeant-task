@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import refresh from "../assets/refresh.svg";
 import add from "../assets/add.svg";
 import searchLogo from "../assets/search.svg";
 import dot from "../assets/dot.svg";
 import size from "../assets/size.svg";
+import { userContext } from "../context/userContext";
 
 
 export default function Repo() {
@@ -11,7 +12,7 @@ export default function Repo() {
     const [repos, setRepos] = useState([]);
     const [filteredRepo, setFilteredRepo] = useState(repos);
     const [search, setSearch] = useState("");
-    const [username, setUsername] = useState("LandePranav");
+    const {username} = useContext(userContext);
     const currDate = new Date();
     console.log(currDate);
 
@@ -33,7 +34,7 @@ export default function Repo() {
 
     useEffect(()=>{
         getRepoData(username);
-    },[]);
+    },[username]);
 
     useEffect(()=>{
         if(search !== ""){
@@ -42,7 +43,7 @@ export default function Repo() {
         else{
             setFilteredRepo(repos);
         }
-    },[search,repos]);
+    },[search,repos,username]);
 
     useEffect(()=>{},[filteredRepo]);
 

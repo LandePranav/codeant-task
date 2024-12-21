@@ -5,19 +5,22 @@ import Login from './components/login'
 import { BrowserRouter as router, Routes, Route, BrowserRouter } from 'react-router-dom'
 import LoaderPage from './components/loaderPage'
 import Home from './components/home'
+import UserContext from './context/userContext'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index path='/' element={<Login />} />
-        <Route path='/rerouting' element={<LoaderPage />} />
-        <Route path='/home' element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <UserContext>
+      <BrowserRouter>
+        <Routes>
+          <Route index path='/' element={<Login />} />
+          <Route path='/rerouting' element={<LoaderPage />} />
+          <Route path='/home' element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </UserContext>
   )
 }
 
