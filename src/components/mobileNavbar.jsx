@@ -10,6 +10,7 @@ import logout from "../assets/logout.svg" ;
 import hamburger from "../assets/hamburger.svg" ;
 import { useContext, useState } from "react";
 import { userContext } from "../context/userContext";
+import { Link } from "react-router-dom";
 
 export default function MobileNavbar() {
 
@@ -18,8 +19,8 @@ export default function MobileNavbar() {
 
     return (
         <nav>
-            <div className="flex w-screen justify-between px-3 py-3 sm:hidden border border-b-[#D5D7DA]">
-                <div className="flex w-full gap-2 font-thin text-lg items-center">
+            <div className="flex w-screen justify-between items-center px-3 py-3 sm:hidden border border-b-[#D5D7DA]">
+                <div className="flex font-satoshi w-full gap-2 text-lg items-center">
                     <img src={logo} alt="logo" className="w-6 h-6" />
                     CodeAnt AI
                 </div>
@@ -48,34 +49,34 @@ export default function MobileNavbar() {
                             )
                         }
                     </select>
-                    <div className="flex w-full gap-2 pl-3">
+                    <Link to={"/home"} className="flex w-full gap-2 pl-3">
                         <img src={home} alt="home" className="w-6 h-6" />
                         Repositories
-                    </div>
-                    <div className="flex w-full gap-2 pl-3">
+                    </Link>
+                    <Link to={"/home/codeReview"} className="flex w-full gap-2 pl-3">
                         <img src={code} alt="code" className="w-6 h-6" />
                         AI Code Review
-                    </div>
-                    <div className="flex w-full gap-2 pl-3">
+                    </Link>
+                    <Link to={"/home/cloudSecurity"} className="flex w-full gap-2 pl-3">
                         <img src={cloud} alt="cloud" className="w-6 h-6" />
                         Cloud Security
-                    </div>
-                    <div className="flex w-full gap-2 pl-3">
+                    </Link>
+                    <Link to={"/home/userManual"} className="flex w-full gap-2 pl-3">
                         <img src={manual} alt="manual" className="w-6 h-6" />
                         How to Use
-                    </div>
-                    <div className="flex w-full gap-2 pl-3">
+                    </Link>
+                    <Link to={"/home/settings"} className="flex w-full gap-2 pl-3">
                         <img src={setting} alt="setting" className="w-6 h-6" />
                         Settings
-                    </div>
-                    <div className="flex w-full gap-2 pl-3">
+                    </Link>
+                    <Link to={"/home/support"} className="flex w-full gap-2 pl-3">
                         <img src={support} alt="support" className="w-6 h-6" />
                         Support
-                    </div>
-                    <div className="flex w-full gap-2 pl-3">
+                    </Link>
+                    <Link to={"/"} className="flex w-full gap-2 pl-3">
                         <img src={logout} alt="logout" className="w-6 h-6" />
                         Logout
-                    </div>
+                    </Link>
                 </div>
             ) }
         </nav>

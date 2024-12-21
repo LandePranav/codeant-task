@@ -4,7 +4,7 @@ import { DotLoader } from 'react-spinners';
 
 export default function LoaderPage() {
     const navigate = useNavigate();
-    const [timer, setTimer] = useState(5);
+    const [timer, setTimer] = useState(3);
 
     useEffect(() => {
         const timeout = setTimeout(() => {

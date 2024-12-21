@@ -8,6 +8,9 @@ export default {
     extend: {
       boxShadow: {
         'custom': '0 2px 4px rgba(0, 0, 0, 0.1), 0 -2px 4px rgba(0, 0, 0, 0.1), 2px 0 4px rgba(0, 0, 0, 0.1), -2px 0 4px rgba(0, 0, 0, 0.1)',
+      },
+      fontFamily: {
+        'satoshi': './src/assets/Satoshi-Variable.ttf',
       }
     },
   },

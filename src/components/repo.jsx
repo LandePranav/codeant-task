@@ -62,11 +62,11 @@ export default function Repo() {
                         <h2>
                             Repositories
                         </h2>
-                        <p className="font-thin">
+                        <p className="">
                             {repos.length} total repositories
                         </p>
                     </div>
-                    <div className="flex gap-3 font-thin">
+                    <div className="flex gap-3">
                         <button onClick={()=> window.location.reload()} className="flex gap-2 rounded-lg border border-[#D5D7DA] px-2 py-1 items-center justify-center">
                             <img src={refresh} alt='refresh' className="w-4 h-4" />
                             Refresh All
@@ -84,7 +84,7 @@ export default function Repo() {
             </div>
             <div className="h-[85%] overflow-y-auto">
                 {filteredRepo.map((repo) => (
-                    <div key={repo.name} className="w-full gap-1 py-2 flex flex-col border-b border-[#D5D7DA]">
+                    <div key={repo.name} className="w-full hover:bg-[#F5F5F5] gap-1 py-2 flex flex-col border-b border-[#D5D7DA]">
                         <div className="flex items-center gap-3">
                             <h3>
                                 {repo.name}

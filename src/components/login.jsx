@@ -19,7 +19,7 @@ export default function Login() {
     const navigate = useNavigate();
 
     return (
-        <div className="flex w-full h-dvh">
+        <div className="flex w-full h-dvh font-inter">
             <div className='hidden items-center justify-center lg:flex w-1/2 relative'>
                 <img className='absolute bottom-0 left-0' src={waterlogo} alt='waterlogo' />
                 <div className='rounded-3xl bg-white font-bold shadow-custom z-10 relative bottom-24'>
@@ -74,7 +74,7 @@ export default function Login() {
                 <div className='flex flex-col items-center w-full border border-[#E9EAEB] rounded-lg p-4 gap-3 bg-white'>
                     <div className='flex items-center gap-2'>
                         <img src={logo} alt='logo' className='w-6 h-6' />
-                        <div className='font-thin text-xl'>
+                        <div className='font-satoshi text-xl'>
                             CodeAnt AI
                         </div>
                      </div>
