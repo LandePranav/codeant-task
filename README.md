@@ -45,6 +45,7 @@ Ensure you have the following installed on your machine:
 
 ## Project Structure :
 
+```graphql
 codeant-task/
 ├── src/
 │   ├── assets/         # Static images and SVGs
@@ -55,13 +56,14 @@ codeant-task/
 ├── public/             # Public assets
 ├── package.json        # Project dependencies and scripts
 └── README.md           # Project documentation
+```
 
 ## Technologies Used
 
-# React: JavaScript library for building user interfaces.
-# React Router: For navigation and routing.
-# Tailwind CSS: Utility-first CSS framework.
-# Context API: State management across components.
+### React: JavaScript library for building user interfaces.
+### React Router: For navigation and routing.
+### Tailwind CSS: Utility-first CSS framework.
+### Context API: State management across components.
 
-### Author
-# Pranav Lande
+## Author
+### Pranav Lande
