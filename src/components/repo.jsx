@@ -5,6 +5,7 @@ import searchLogo from "../assets/search.svg";
 import dot from "../assets/dot.svg";
 import size from "../assets/size.svg";
 import { userContext } from "../context/userContext";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Repo() {
@@ -15,6 +16,7 @@ export default function Repo() {
     const {username} = useContext(userContext);
     const currDate = new Date();
     console.log(currDate);
+    const navigate = useNavigate();
 
     const getRepoData = async (username) => {
         try {
@@ -67,7 +69,7 @@ export default function Repo() {
                         </p>
                     </div>
                     <div className="flex gap-3">
-                        <button onClick={()=> window.location.reload()} className="flex gap-2 rounded-lg border border-[#D5D7DA] px-2 py-1 items-center justify-center">
+                        <button onClick={()=> navigate(0)} className="flex gap-2 rounded-lg border border-[#D5D7DA] px-2 py-1 items-center justify-center">
                             <img src={refresh} alt='refresh' className="w-4 h-4" />
                             Refresh All
                         </button>
