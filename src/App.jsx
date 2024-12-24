@@ -1,10 +1,9 @@
 import './App.css'
 import Login from './components/login'
-import { BrowserRouter,HashRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import LoaderPage from './components/loaderPage'
 import Home from './components/home'
 import UserContext from './context/userContext'
-
 
 function App() {
 
