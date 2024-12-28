@@ -13,7 +13,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row w-full h-dvh font-inter">
             <MobileNavbar />
             <PcNavbar />
-            <div className="w-full h-full flex-grow p-4 bg-[#FAFAFA]">
+            <div className="w-full h-full flex-grow sm:p-4 bg-[#FAFAFA]">
                 <div className="w-full h-full bg-white p-3 rounded-lg border border-[#E9EAEB] ">
                     <Routes>
                         <Route index path="/" element={<Repo />} />

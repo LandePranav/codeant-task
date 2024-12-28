@@ -84,7 +84,7 @@ export default function Repo() {
                     <img src={searchLogo} className="w-6 h-6 absolute top-[13px] left-2" alt="searchLogo" />
                 </div>
             </div>
-            <div className="h-[85%] overflow-y-auto">
+            <div className="h-[75%] sm:h-[85%] overflow-y-auto">
                 {filteredRepo.map((repo) => (
                     <div key={repo.name} className="w-full hover:bg-[#F5F5F5] gap-1 py-2 flex flex-col border-b border-[#D5D7DA]">
                         <div className="flex items-center gap-3">
@@ -95,16 +95,16 @@ export default function Repo() {
                                 {repo.visibility}
                             </p>
                         </div>
-                        <div className="flex gap-10 font-sm ">
+                        <div className="flex justify-start gap-[24px] sm:gap-10 text-sm ">
                             <p className="flex gap-2 items-center">
                                 {repo.language}
-                                <img src={dot} alt="dot" className="w-3 h-3" />
+                                <img src={dot} alt="dot" className="w-2 h-2" />
                             </p>
-                            <p className="flex gap-1 items-center">
-                                <img src={size} alt="size" className="w-4 h-4" />
+                            <p className="flex gap-2 items-center text-nowrap">
+                                <img src={size} alt="size" className="w-3 h-3" />
                                 {repo.size} KB
                             </p>
-                            <p className="flex gap-2">
+                            <p className="flex gap-2  items-center text-nowrap">
                                 {
                                     timeDiff(currDate, repo.updated_at) > 0 ?
                                     (   
